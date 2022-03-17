@@ -1,0 +1,3 @@
+* Just another emacs config
+
+Probably not of so much use to you...

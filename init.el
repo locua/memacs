@@ -1,4 +1,4 @@
-;; INIT.EL - my config
+;; INIT.EL - memacs
 
 
 ;; Disabling things
@@ -6,6 +6,10 @@
 (menu-bar-mode -1) 
 (toggle-scroll-bar -1) 
 (tool-bar-mode -1) 
+
+
+;; Installing things
+;;-----------------------------------------------------------------------
 
 (require 'package)
 (add-to-list 'package-archives
@@ -25,12 +29,18 @@
  ;; If there is more than one, they won't work right.
  )
 
+
+;; Custom things
+;;-----------------------------------------------------------------------
+
 (defun build-blog ()
+  ;; run python script ting
   (save-buffer)
   (interactive)
   (shell-command "cd ~/src/wwwwssss/blog && ./gen.py build"))
 
 
 ;; Key bindings
+;;-----------------------------------------------------------------------
 (global-set-key (kbd "C-c b") 'build-blog)
 (global-set-key (kbd "C-c g") 'magit)
