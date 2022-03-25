@@ -21,7 +21,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(evil magit markdown-mode)))
+ '(package-selected-packages '(neotree evil magit markdown-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -29,6 +29,12 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; Make evil conform to markdown mode
+(add-to-list 'load-path "~/.emacs.d/plugins/evil-markdown")
+(require 'evil-markdown)
+
+;; mouse in terminal
+(xterm-mouse-mode 1)
 
 ;; Custom things
 ;;-----------------------------------------------------------------------
@@ -39,8 +45,15 @@
   (interactive)
   (shell-command "cd ~/src/wwwwssss/blog && ./gen.py build"))
 
+(defun quick-git()
+  ;; do a quick git commit -am push
+  (save-buffer)
+  (interactive)
+  (shell-command "git commit -am 'post' && git push")) 
+
 
 ;; Key bindings
 ;;-----------------------------------------------------------------------
 (global-set-key (kbd "C-c b") 'build-blog)
 (global-set-key (kbd "C-c g") 'magit)
+(global-set-key (kbd "C-c u") 'quick-git)
