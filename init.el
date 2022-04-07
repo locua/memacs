@@ -55,7 +55,7 @@
   ;; do a quick git commit -am push
   (save-buffer)
   (interactive)
-  (shell-command "git commit -am 'post' && git push")) 
+  (shell-command "git commit -am 'Quick auto commit and push' && git push")) 
 
 ;; Key bindings
 ;;-----------------------------------------------------------------------
