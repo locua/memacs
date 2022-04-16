@@ -1,16 +1,18 @@
 ;;-----------------------------------------------------------------------
 ;; INIT.EL - memacs 
 ;;-----------------------------------------------------------------------
-;; Disabling things
+;; Disabling things, tweaking
 ;;-----------------------------------------------------------------------
 (menu-bar-mode -1) 
 (toggle-scroll-bar -1) 
 (tool-bar-mode -1)
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 ;;-----------------------------------------------------------------------
 ;; Enabling things
 ;;-----------------------------------------------------------------------
 (require 'evil)
 (evil-mode 1)
+(ivy-mode 1)
 ;; mouse in terminal
 (xterm-mouse-mode 1)
 ;;-----------------------------------------------------------------------
@@ -26,7 +28,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(neotree evil magit markdown-mode)))
+ '(custom-safe-themes
+   '("fe1c13d75398b1c8fd7fdd1241a55c286b86c3e4ce513c4292d01383de152cb7" default))
+ '(package-selected-packages '(ivy dracula-theme neotree evil magit markdown-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -64,3 +68,4 @@
 (global-set-key (kbd "C-c g") 'magit)
 (global-set-key (kbd "C-c u") 'quick-git)
 (global-set-key (kbd "C-x t") 'neotree-toggle)
+;;=======================================================================
