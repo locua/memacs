@@ -68,4 +68,5 @@
 (global-set-key (kbd "C-c g") 'magit)
 (global-set-key (kbd "C-c u") 'quick-git)
 (global-set-key (kbd "C-x t") 'neotree-toggle)
+(global-set-key (kbd "C-x /") 'comment-or-uncomment-region)
 ;;=======================================================================
